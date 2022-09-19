@@ -1,16 +1,29 @@
 body {
-  /* font-family: 'Montserrat', sans-serif; */
   font-family: "Poppins", sans-serif;
-  /* font-family: 'Rubik', sans-serif; */
 }
 .text-primary {
   color: #3caa35;
 }
+.text-light {
+  color: #ffffff;
+}
+.text-primary-100 {
+  color: #1d6558;
+}
 .bg-primary {
   background: #3caa35;
 }
+.border-primary {
+  border: 2px solid #3caa35;
+}
 .bg-secondary {
   background: #ff992e;
+}
+.text-xss {
+  font-size: 0.6rem;
+}
+.text-secondary {
+  color: #ff992e;
 }
 .bg-opacity {
   background: linear-gradient(
@@ -22,9 +35,33 @@ body {
   /* ,
     url(image.png); */
 }
+.font-mont {
+  font-family: "Montserrat", sans-serif;
+}
+.font-rubik {
+  font-family: "Rubik", sans-serif;
+}
 .text-dark1 {
   color: #544f49;
 }
 .text-dark2 {
   color: #1d1610;
+}
+.text-dark3 {
+  color: #909090;
+}
+ul,
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+nav ul li {
+  cursor: pointer;
+}
+.tractor-bg {
+  background: url("./assets/train-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
