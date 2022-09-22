@@ -1,0 +1,13 @@
+.profile {
+    background-image : url("../../../assets/sidebg.png");
+    background-size: 30rem;
+    background-repeat : no-repeat;
+    background-position : right ;
+}
+@media (max-width : 600px) {
+    .profile {
+        background-image : none;
+        background :  #EFF8EF;
+        
+    }
+}

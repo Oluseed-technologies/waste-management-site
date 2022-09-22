@@ -3,8 +3,8 @@ const Companies = () => {
   const arrs = new Array(8).fill(0);
   const renderCompanies = arrs.map((data) => {
     return (
-      <div className="-flex  w-48 mx-2 shadow-md rounded-md flex-col my-3">
-        <img src={img1} className="object-fill" alt="company1" />
+      <div className="flex  md:w-48 mx-2 shadow-md rounded-md md:flex-col my-3">
+        <img src={img1} className='md:auto w-36' alt="company1" />
         <div className="bg-white p-3">
           <div className="text-primary-100 text-xs flex font-bold">
             <p>Olaoluwa Waste Management</p>
@@ -19,14 +19,30 @@ const Companies = () => {
   //   console.log(arrs);
   return (
     <>
-      <div className="flex justify-between my-5 flex-wrap">
-        {renderCompanies}
+      <div
+        style={{ background: " rgba(60, 170, 53, 0.1" }}
+        className="px-2 md:px-64  py-24"
+      >
+        <h1 className="text-3xl text-center font-bold">
+          Our Waste Management Company
+        </h1>
+        <p className="font-light text-center text-sm my-5 text-dark2">
+          Dolore magna aliqua enim ad minim veniam, quis nostrud exercitation
+          aliquip duis aute irure dolorin reprehenderits vol dolore fugiat nulla
+          pariatur excepteur sint occaecat cupidatat.
+        </p>
+        <div className="text-start">
+          <div className="flex justify-between my-5 flex-wrap">
+            {renderCompanies}
+          </div>
+          <div className="btn flex justify-center">
+            <button className="bg-primary font-mont text-white w-56 rounded-md py-1">
+              See more...
+            </button>
+          </div>{" "}
+        </div>
       </div>
-      <div className="btn flex justify-center">
-        <button className="bg-primary font-mont text-white w-56 rounded-md py-1">
-          See more...
-        </button>
-      </div>
+      ;
     </>
   );
 };

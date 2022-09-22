@@ -19,11 +19,26 @@ body {
 .bg-secondary {
   background: #ff992e;
 }
+.bg-dark {
+  background: #908c88;
+}
+.bg-dark2 {
+  background: #e7e5e5;
+}
 .text-xss {
   font-size: 0.6rem;
 }
 .text-secondary {
   color: #ff992e;
+}
+.bg-light {
+  background: #e1f1e2;
+}
+.bg-light-100 {
+  background: rgba(196, 196, 196, 0.2);
+}
+.text-light {
+  color: #8c8181;
 }
 .bg-opacity {
   background: linear-gradient(
@@ -50,6 +65,22 @@ body {
 .text-dark3 {
   color: #909090;
 }
+
+.text-dark4 {
+  color: #3a3a3a;
+}
+.text-dark5 {
+  color: #8c8181;
+}
+.text-dark6 {
+  color: #908c88;
+}
+.text-dark6 {
+  color: #918c88;
+}
+.text-dark7 {
+  color: #2e2e48;
+}
 ul,
 li {
   list-style-type: none;
@@ -64,4 +95,12 @@ nav ul li {
   background: url("./assets/train-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
+}
+input {
+  outline: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

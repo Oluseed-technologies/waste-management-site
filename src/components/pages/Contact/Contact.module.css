@@ -1,0 +1,8 @@
+.contact {
+    height : 60rem;
+}
+@media (max-width : 600px) {
+    .contact {
+        height : 90rem
+    }
+}

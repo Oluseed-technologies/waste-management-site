@@ -1,0 +1,7 @@
+@media (max-width : 600px) {
+    .header_bg {
+        background : url("../../../assets/tractor1.png");
+        background-size : contain;
+        background-repeate : no-repeat;
+    }
+}

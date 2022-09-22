@@ -1,64 +1,50 @@
-import tractor from "../../../assets/tractor1.png";
 import tick from "../../../assets/tick.png";
-import pickUp from "./pickup.json";
+import icon1 from "../../../assets/icon1.png";
+import icon2 from "../../../assets/icon2.png";
+import icon3 from "../../../assets/icon3.png";
+import Header from "./Header";
 import Companies from "./Companies";
 import About from "./About";
 import Testimonial from "./Testimonial";
 import OurApp from "./OurApp";
 const Home = () => {
-  const renderPickups = pickUp.map((data) => {
-    return (
-      <div className="flex flex-col ">
-        <label className="text-dark1 text-sm font-semibold" htmlFor={data.name}>
-          {data.name}
-        </label>
-        <select
-          className="text-gray-600 border-solid border-2 rounded-md my-2 px-3 py-2 border-gray-100 text-sm"
-          name="type"
-        >
-          {data.options.map((option) => {
-            return <option value="waste type">{option}</option>;
-          })}
-        </select>
-      </div>
-    );
-  });
   return (
     <>
-      <div className="block md:flex justify-between pl-4 pr-4  md:pl-64 my-10 md:pr-20">
-        <section className="shadow-lg text-lg p-7 max-h-fit">
-          <h2 className="font-bold">Schedule a pickup</h2>
-          <p className="my-3 text-sm text-gray-600  font-rubik">
-            Dispose your waste throuh hygenic means
-          </p>
-          {renderPickups}
-        </section>
-        <section className="max-h-48">
-          <img src={tractor} alt="tractor" />
-        </section>
-      </div>
+      <Header />
       <div className="flex flex-col mx-auto  my-24 justify-center  items-center">
         <h2 className="my-4 ">Manage Your Waste</h2>
-        <div className=" font-bold text-4xl">Quick & easy Waste Management</div>
+        <div className=" font-bold text-center text-md md:text-4xl">Quick & easy Waste Management</div>
         {/* Manage Waste */}
-        <div className="block md:flex justify-between   md:px-64 px-4 my-8 items-center">
-          <div className="">
-            <h2 className="font-semibold">Search Location</h2>
-            <p className="font-light text-sm my-5 text-dark2">
+        <div className="block  md:flex justify-center   md:px-64 px-2 my-8 items-center">
+          <div className="flex flex-col items-center justify-center">
+            <span className="my-2">
+              {" "}
+              <img className="md:w-14 w-10" src={icon1} alt="icon1" />
+            </span>
+            <h2 className="font-bold text-center">Search Location</h2>
+            <p className="font-lighter  text-center text-sm my-5 text-dark2">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium.
             </p>
           </div>
-          <div className="">
-            <h2 className="font-semibold">Search Location</h2>
-            <p className="font-light text-sm my-5 text-dark2">
+          <div className="flex flex-col items-center justify-center">
+            <span className="my-2">
+              {" "}
+              <img className="md:w-14 w-10"  src={icon3} alt="icon1" />
+            </span>
+            <h2 className="font-bold text-center">Select Date & Time</h2>
+            <p className="font-lighter text-center text-sm my-5 text-dark2">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium.
             </p>
           </div>
-          <div className="">
-            <h2 className="font-semibold">Search Location</h2>
-            <p className="font-light text-sm my-5 text-dark2">
+          <div className="flex flex-col items-center justify-center">
+            <span className="my-2">
+              {" "}
+              <img className="md:w-14 w-10"  src={icon2} alt="icon1" />
+            </span>
+            <h2 className="font-bold text-center">Pick up</h2>
+            <p className="font-lighter text-center text-sm my-5 text-dark2">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium.
             </p>
@@ -66,20 +52,9 @@ const Home = () => {
         </div>
 
         {/* Companies */}
-        <div
-          style={{ background: " rgba(60, 170, 53, 0.1" }}
-          className="px-64 py-24"
-        >
-          <h1 className="text-3xl font-bold">Our Waste Management Company</h1>
-          <p className="font-light text-sm my-5 text-dark2">
-            Dolore magna aliqua enim ad minim veniam, quis nostrud exercitation
-            aliquip duis aute irure dolorin reprehenderits vol dolore fugiat
-            nulla pariatur excepteur sint occaecat cupidatat.
-          </p>
-          <div className="text-start">
-            <Companies />
-          </div>
-        </div>
+
+        <Companies />
+
         {/* About Us */}
         <div className="md:px-64 px-4 text-start py-24">
           <About />
@@ -102,7 +77,7 @@ const Home = () => {
       </div>
       <div
         style={{ background: " rgba(60, 170, 53, 0.1" }}
-        className="md:px-64 px-4 text-start py-24"
+        className="md:px-64 px-4 text-start pt-24"
       >
         <OurApp />
       </div>

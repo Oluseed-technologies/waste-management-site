@@ -1,16 +1,71 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+
+// utils import
+import { useLocation } from "react-router-dom";
+
+// Common files import
 import Navbar from "./components/common/Navbar/Navbar";
 import Footer from "./components/common/Footer/Footer";
+import Sidebar from "./components/common/Sidebar/Sidebar";
+
+// Register pages import
+import SignUp from "./components/forms/signup/signup";
+import Register from "./components/forms/signup/Register";
+
+// pages import
 import Home from "./components/pages/Home/Home";
+import About from "./components/pages/About/About";
+import Contact from "./components/pages/Contact/Contact";
+import Manage from "./components/pages/manage/ManageWaste";
+import Company from "./components/pages/manage/Company";
+import Subscription from "./components/pages/manage/Subscription";
+import Profile from "./components/pages/profile/Profile";
+
+// Vendor dashboard import
+import Dashboard from "./components/Vendor/Dashboard/Dashboard";
+import Account from "./components/Vendor/Account/Account";
+import Transaction from "./components/Vendor/Transaction/Transaction";
+import VendorProfile from "./components/Vendor/Profile/Profile";
+
 function App() {
+  const location = useLocation();
+  const path = location.pathname;
+  const showNavPath = [
+    "/",
+    "/login",
+    "/register",
+    "/about",
+    "/contact",
+    "/manage-waste",
+    "/company",
+    "/subscription",
+    "/profile",
+  ];
+  const arr = showNavPath.find((pagePath, index) => {
+    return pagePath === path;
+  });
+
   return (
     <div className="App">
-      <Navbar />
+      {path === arr ? <Navbar /> : <Sidebar path={path} />}
+
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<SignUp />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/manage-waste" element={<Manage />} />
+        <Route path="/company" element={<Company />} />
+        <Route path="/subscription" element={<Subscription />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/vendor/transaction" element={<Transaction />} />
+        <Route path="/vendor/account" element={<Account />} />
+        <Route path="/vendor/profile" element={<VendorProfile />} />
       </Routes>
-      <Footer />
+      {path === arr ? <Footer /> : ""}
+    
     </div>
   );
 }

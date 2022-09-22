@@ -1,0 +1,20 @@
+[
+  {
+    "type": "basic",
+    "price": "2500",
+    "duration": "Daily waste disposal",
+    "bonus": "24hrs response"
+  },
+  {
+    "type": "standard",
+    "price": "10000",
+    "duration": "weekly waste disposal",
+    "bonus": "Cash-bark guarantee"
+  },
+  {
+    "type": "basic",
+    "price": "100000",
+    "duration": "annual waste disposal",
+    "bonus": "Multiple bonuses & perks"
+  }
+]

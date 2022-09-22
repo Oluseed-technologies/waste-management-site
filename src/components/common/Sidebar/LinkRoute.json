@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Dashboard",
+    "path": "/vendor/dashboard"
+  },
+  {
+    "name": "Account",
+    "path": "/vendor/account"
+  },
+  {
+    "name": "Transaction",
+    "path": "/vendor/transaction"
+  },
+  {
+    "name": "Profile",
+    "path": "/vendor/profile"
+  }
+]
