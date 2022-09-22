@@ -1,8 +1,10 @@
+import {useNavigate} from 'react-router-dom'
 import plan from "./Plans.json";
 import mark from "../../../assets/mark.png";
 import curve from "../../../assets/curve.png";
 import Arrow from "../../../assets/Arrow 1.png";
 const PaymentPlan = () => {
+  const navigate = useNavigate()
   const renderPlan = plan.map((data, index) => {
     return (
       <div
@@ -38,7 +40,7 @@ const PaymentPlan = () => {
           </li>
         </ul>
         {/* </div/> */}
-        <button className="bg-primary relative  w-full rounded-md py-2  text-white font-mont">
+        <button onClick ={() => navigate('/manage-waste/subscription')} className="bg-primary relative  w-full rounded-md py-2  text-white font-mont">
           Proceed{" "}
           <span className=" absolute right-4  top-1/4   ">
             <img src={Arrow} className="w-4" alt="arrow" />

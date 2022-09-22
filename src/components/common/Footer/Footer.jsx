@@ -1,4 +1,5 @@
 import Logo from "../Logo/Logo";
+import style from './Footer.module.css'
 import clock from "../../../assets/clock.png";
 import facebook from "../../../assets/facebook.png";
 import instagram from "../../../assets/instagram.png";
@@ -6,21 +7,21 @@ import linkediln from "../../../assets/linkediln.png";
 import pinterest from "../../../assets/pinterest.png";
 const Footer = () => {
   return (
-    <footer className=" md:px-64 px-4 text-start md:py-24 py-10">
+    <footer className={` ${style.footer} md:px-64 px-4  text-start md:py-24 py-10`}>
       <div className="block md:flex justify-between pb-12 border-b-2 border-grey-300 border-solid">
         <div className="">
-          <h3>Join Our Newsletter</h3>
-          <p className="my-5">Get the latest news and updates from us</p>
+          <h3 className='text-center md:text-start'>Join Our Newsletter</h3>
+          <p className="my-5 text-center md:text-start">Get the latest news and updates from us</p>
         </div>
-        <div className="flex items-center">
+        <div className="flex md:items-center">
           <input
             type="email"
             placeholder="Enter address"
             style={{ background: "rgba(29,22,16,0.05)" }}
-            className="border-2 text-xs rounded-md p-2 text-black w-72 border-grey-100"
+            className="border-2 text-xs rounded-md p-3 w-full text-black md:w-72 border-grey-100"
           />
-          <button className="py-2 rounded-lg mx-3 px-5 text-xs  bg-secondary">
-            SIGN IN
+          <button className="py-3 font-mont rounded-lg -mx-2 md:mx-3 md:w-auto w-32 px-5 text-xs  bg-secondary">
+            SIGN UP
           </button>
         </div>
       </div>

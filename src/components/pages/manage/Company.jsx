@@ -32,7 +32,7 @@ const Company = () => {
 
   return (
     <>
-      <div className="company m-20">
+      <div className="company m-4 md:m-20">
         <div className="flex flex-col">
           <img src={companyImg} />
         </div>
@@ -96,7 +96,7 @@ const Company = () => {
             tortor nec id vulputate id.
           </p>
         </div>
-        <div className="flex justify-between my-10">
+        <div className="block md:flex justify-between my-10">
           <div>
             <h1 className="font-bold">Working Hours</h1>
             <div className="my-3">{renderDate}</div>

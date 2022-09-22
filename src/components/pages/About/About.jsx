@@ -7,7 +7,7 @@ const About = () => {
       <div className="container">
         <main style={{ background: `url(${bg})` }} className="Login py-20">
         <div className="logo">
-              <img src={logo} className='md:w-auto w-36 mx-auto'  alt="logo" />
+              <img src={logo} className='md:hidden md:w-auto w-36 mx-auto'  alt="logo" />
             </div>
           <div className=" hidden md:flex items-center justify-around">
             <div className="logo">

@@ -1,10 +1,12 @@
 import img1 from "../../../assets/img5.png";
+import {useNavigate} from 'react-router-dom'
 const Companies = () => {
   const arrs = new Array(8).fill(0);
+  const navigate = useNavigate()
   const renderCompanies = arrs.map((data) => {
     return (
-      <div className="flex  md:w-48 mx-2 shadow-md rounded-md md:flex-col my-3">
-        <img src={img1} className='md:auto w-36' alt="company1" />
+      <div style={{cursor : 'pointer'}} onClick ={() => navigate('manage-waste/company')} className="flex  md:w-48 mx-2 shadow-md rounded-md md:flex-col my-3">
+        <img src={img1} className='md:w-auto w-36' alt="company1" />
         <div className="bg-white p-3">
           <div className="text-primary-100 text-xs flex font-bold">
             <p>Olaoluwa Waste Management</p>

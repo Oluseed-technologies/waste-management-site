@@ -1,4 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import {motion} from 'framer-motion'
 import {useState} from 'react'
 import logo from "../../../assets/light-logo.png";
 import dashboard from "../../../assets/dashboard.png";
@@ -16,13 +17,23 @@ const Sidebar = ({ path }) => {
   const images = [dashboard, user, wallet, user];
    const [isOpen, setIsOpen] = useState(false);
 
+   const closeRoute = () => {
+     setIsOpen(false)
+   }
+
+    const variants = {
+    open: { opacity: 1, x: "0%", height : 'auto', weight : 'auto' },
+    closed: { opacity: 0, x: "-100rem" , height : '0', weight : "0"},
+  };
+
   const renderRoute = LinkRoute.map((data, index) => {
     return (
       <Link
+      onClick ={closeRoute}
         key={index}
         className={` ${
           path === data.path ? "bg-secondary" : ""
-        }  p-4  flex rounded-l-full my-8 items-center   block`}
+        }  p-4  flex rounded-l-full md:my-4 md:my-8 items-center   block`}
         to={`${data.path}`}
       >
         <span>
@@ -48,6 +59,13 @@ const Sidebar = ({ path }) => {
         )}
       </div>
      </nav>
+     <motion.nav layout animate={isOpen ? "open" : "closed"}
+      variants={variants} className={`${isOpen ? 'block' : 'hidden'} bg-primary py-3 text-white block md:hidden `}> 
+     {renderRoute}
+     {/* <div>
+     <input className='w-full bg-grey-100 mx-3 border-solid border-2 border-grey-200' type='text' />
+      </div> */}
+     </motion.nav>
       <aside className={` hidden bg-primary   md:block fixed top-0 bottom-0 py-10 left-0  shadow-2xl `}>
         <div className="w-24 mx-auto">
           <img src={logo} alt="logo" />

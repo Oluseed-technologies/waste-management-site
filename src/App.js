@@ -38,8 +38,8 @@ function App() {
     "/about",
     "/contact",
     "/manage-waste",
-    "/company",
-    "/subscription",
+    "/manage-waste/company",
+    "/manage-waste/subscription",
     "/profile",
   ];
   const arr = showNavPath.find((pagePath, index) => {
@@ -57,8 +57,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/manage-waste" element={<Manage />} />
-        <Route path="/company" element={<Company />} />
-        <Route path="/subscription" element={<Subscription />} />
+        <Route path="/manage-waste/company" element={<Company />} />
+        <Route path="/manage-waste/subscription" element={<Subscription />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/vendor/transaction" element={<Transaction />} />
         <Route path="/vendor/account" element={<Account />} />

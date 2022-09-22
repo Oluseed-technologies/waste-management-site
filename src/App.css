@@ -1,6 +1,7 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
 .text-primary {
   color: #3caa35;
 }
@@ -36,6 +37,13 @@ body {
 }
 .bg-light-100 {
   background: rgba(196, 196, 196, 0.2);
+}
+.bg-light-200 {
+  background :  #E8E8E8;
+  
+}
+.bg-light-300 {
+  background: #C3D9C2;
 }
 .text-light {
   color: #8c8181;
@@ -103,4 +111,10 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+@media (max-width : 600px) {
+  .App {
+    background : #EFF8EF;
+  }
 }

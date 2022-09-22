@@ -14,7 +14,7 @@ const Subscription = () => {
         Subscription
       </h1>
       <div className="flex justify-center bg-light py-12">
-        <div className="flex  flex-col">
+        <div className="flex p-4  flex-col">
           <div className="relative ">
             <span className="absolute left-4  top-1/3">
               <img src={card} className="w-8" alt="mobile" />

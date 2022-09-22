@@ -1,0 +1,9 @@
+.footer {
+    background : none;
+}
+@media (max-width : 600px) {
+    .footer{
+        background :    #E8E8E8
+;        
+    }
+}

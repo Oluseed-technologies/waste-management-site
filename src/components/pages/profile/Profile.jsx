@@ -54,8 +54,8 @@ const Profile = () => {
             </div>
           </div>
         </div>
-        <div className="my-10 mx-3 md:mx-0 text-dark6">
-          <h1 style={{ borderBottom: "2px solid #3CAA35" }} className="w-max">
+        <div className="my-10 px-3  md:mx-0 text-dark6">
+          <h1 style={{ borderBottom: "2px solid #3CAA35" }} className="  w-max">
             Transaction history
           </h1>
           <div className="my-8">
