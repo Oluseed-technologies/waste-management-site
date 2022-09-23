@@ -63,6 +63,7 @@ function App() {
         <Route path="/vendor/transaction" element={<Transaction />} />
         <Route path="/vendor/account" element={<Account />} />
         <Route path="/vendor/profile" element={<VendorProfile />} />
+        <Route path="/vendor/dashboard" element={<Dashboard />} />
       </Routes>
       {path === arr ? <Footer /> : ""}
     

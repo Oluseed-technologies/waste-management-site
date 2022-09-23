@@ -1,4 +1,4 @@
-import Header from "../Header";
+import {Header} from "../Header";
 import user2 from "../../../assets/VendorProfile.png";
 import star from "../../../assets/star1.png";
 import OurTeam from "../../../components/pages/About/OurTeam";

@@ -1,4 +1,4 @@
-import Header from "../Header";
+import {Header} from "../Header";
 import Footer from '../../../components/common/Footer/Footer'
 const Transaction = () => {
   const arr = new Array(6).fill(0);

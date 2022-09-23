@@ -1,6 +1,6 @@
 import user2 from "../../../assets/user2.png";
 import { HiChevronDown } from "react-icons/hi";
-import Header from "../Header";
+import {Header} from "../Header";
 import Footer from '../../../components/common/Footer/Footer'
 const Dashboard = () => {
   const arr = new Array(6).fill(0);

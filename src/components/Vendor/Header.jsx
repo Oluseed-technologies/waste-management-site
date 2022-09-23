@@ -2,7 +2,7 @@ import topIcon from "../../assets/topIcon.png";
 import search from "../../assets/search.png";
 import exportIcon from "../../assets/exportIcon.png";
 import user1 from "../../assets/user1.png";
-const Header = () => {
+export const Header = () => {
   return (
     <>
       <header className="hidden md:flex  items-center justify-between">
@@ -30,7 +30,14 @@ const Header = () => {
           </span>
         </div>
       </header>
-      <div className="hidden md:flex justify-between my-8 items-center">
+    
+    </>
+  );
+};
+export const Search = () => {
+  return (
+    <> 
+  <div className="hidden md:flex justify-between my-8 items-center">
         <div className="relative  ">
           <input
             style={{ border: "1px solid #cccccc" }}
@@ -55,6 +62,5 @@ const Header = () => {
         </div>
       </div>
     </>
-  );
-};
-export default Header;
+  )
+}

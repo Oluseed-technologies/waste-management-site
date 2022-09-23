@@ -1,0 +1,17 @@
+[
+    {
+        "type" : "User",
+        "amount" : "3200",
+        "percent" : "5.20%"
+    },
+    {
+        "type" : "Income",
+        "amount" : "2503",
+        "percent" : "2.82%"
+    },
+    {
+        "type" : "Pending Account",
+        "amount" : "173000",
+        "percent" : "8.12%"
+    }
+]

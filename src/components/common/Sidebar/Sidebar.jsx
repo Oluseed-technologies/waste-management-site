@@ -60,11 +60,20 @@ const Sidebar = ({ path }) => {
       </div>
      </nav>
      <motion.nav layout animate={isOpen ? "open" : "closed"}
-      variants={variants} className={`${isOpen ? 'block' : 'hidden'} bg-primary py-3 text-white block md:hidden `}> 
+      variants={variants} className={`${isOpen ? 'block' : 'hidden'} bg-primary py-3 text-white  md:hidden `}> 
+     <div className='md:hidden'> 
      {renderRoute}
-     {/* <div>
-     <input className='w-full bg-grey-100 mx-3 border-solid border-2 border-grey-200' type='text' />
-      </div> */}
+     </div>
+        <div
+          onClick={() => navigate("/login")}
+          className="text-center rounded-3xl mx-3 w-48 md:hidden text-2xl font-semibold flex items-center justify-center bg-white p-3 text-secondary "
+        >
+          <span>
+            <img className="w-6 mx-2" src={logout} alt="logout" />
+          </span>
+          <p>Logout</p>
+        </div>
+     
      </motion.nav>
       <aside className={` hidden bg-primary   md:block fixed top-0 bottom-0 py-10 left-0  shadow-2xl `}>
         <div className="w-24 mx-auto">
