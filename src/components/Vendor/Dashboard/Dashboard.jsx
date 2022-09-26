@@ -2,10 +2,14 @@ import { Header } from "../Header";
 import Visuals from "./Visuals";
 import Summary from "./Summary.json";
 import { motion } from "framer-motion";
+import icon1 from "../../../assets/Icon (3).png";
+import icon2 from "../../../assets/Icon (4).png";
+import icon3 from "../../../assets/Icon (5).png";
 const Dashboard = () => {
+  const icons = [icon1, icon2, icon3];
   const renderSummary = Summary.map((data, index) => {
     return (
-      <div className="shadow-xl  p-8  rounded-xl mr-3">
+      <div className="shadow-md relative w-full p-8 my-4  rounded-xl mr-3">
         <p className="text-dark8 font-medium"> {data.type} </p>
         <h1 className="text-black text-2xl font-bold"> {data.amount} </h1>
         <p className="text-dark8 mt-5 font-medium">
@@ -16,6 +20,9 @@ const Dashboard = () => {
           </span>{" "}
           since last month{" "}
         </p>
+        <span className="absolute top-0 right-0">
+          <img src={icons[index]} />
+        </span>
       </div>
     );
   });
@@ -39,9 +46,7 @@ const Dashboard = () => {
         className=" mx-4 md:ml-72 md:mr-10 my-10"
       >
         <Header />
-        <div className="flex md:overflow-hidden overflow-scroll justify-between ">
-          {renderSummary}
-        </div>
+        <div className="block md:flex  justify-between ">{renderSummary}</div>
         <Visuals />
         <div className="page_visits shadow-normal rounded-2xl bg-light-400 my-5">
           <div className="flex p-3    justify-between items-center">

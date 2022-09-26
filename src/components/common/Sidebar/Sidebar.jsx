@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import {motion} from 'framer-motion'
-import {useState} from 'react'
+import { motion } from "framer-motion";
+import { useState } from "react";
 import logo from "../../../assets/light-logo.png";
 import dashboard from "../../../assets/dashboard.png";
 import wallet from "../../../assets/wallet.png";
@@ -15,21 +15,21 @@ import siteLogo from "../../../assets/logo.png";
 const Sidebar = ({ path }) => {
   const navigate = useNavigate();
   const images = [dashboard, user, wallet, user];
-   const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-   const closeRoute = () => {
-     setIsOpen(false)
-   }
+  const closeRoute = () => {
+    setIsOpen(false);
+  };
 
-    const variants = {
-    open: { opacity: 1, x: "0%", height : 'auto', weight : 'auto' },
-    closed: { opacity: 0, x: "-100rem" , height : '0', weight : "0"},
+  const variants = {
+    open: { opacity: 1, x: "0%", height: "auto", weight: "auto" },
+    closed: { opacity: 0, x: "-100rem", height: "0", weight: "0" },
   };
 
   const renderRoute = LinkRoute.map((data, index) => {
     return (
       <Link
-      onClick ={closeRoute}
+        onClick={closeRoute}
         key={index}
         className={` ${
           path === data.path ? "bg-secondary" : ""
@@ -45,25 +45,35 @@ const Sidebar = ({ path }) => {
   });
   return (
     <>
-     <nav style={{"background": "#C3D9C2"}} className='flex px-2 md:hidden py-2   justify-between items-center'>
-    <span> <img className='w-12' src ={siteLogo} /> </span>
-       <div className="">
-        {isOpen ? (
-          <span onClick={() => setIsOpen(isOpen => !isOpen)}>
-            <img src={cancel} alt="menu" />{" "}
-          </span>
-        ) : (
-          <span onClick={() => setIsOpen(isOpen => !isOpen)}>
-            <img src={menu} alt="cancel" />{" "}
-          </span>
-        )}
-      </div>
-     </nav>
-     <motion.nav layout animate={isOpen ? "open" : "closed"}
-      variants={variants} className={`${isOpen ? 'block' : 'hidden'} bg-primary py-3 text-white  md:hidden `}> 
-     <div className='md:hidden'> 
-     {renderRoute}
-     </div>
+      <nav
+        style={{ background: "#C3D9C2" }}
+        className="flex px-2 md:hidden py-2   justify-between items-center"
+      >
+        <span onClick={() => navigate("/")}>
+          {" "}
+          <img className="w-12" src={siteLogo} />{" "}
+        </span>
+        <div className="">
+          {isOpen ? (
+            <span onClick={() => setIsOpen((isOpen) => !isOpen)}>
+              <img src={cancel} alt="menu" />{" "}
+            </span>
+          ) : (
+            <span onClick={() => setIsOpen((isOpen) => !isOpen)}>
+              <img src={menu} alt="cancel" />{" "}
+            </span>
+          )}
+        </div>
+      </nav>
+      <motion.nav
+        layout
+        animate={isOpen ? "open" : "closed"}
+        variants={variants}
+        className={`${
+          isOpen ? "block" : "hidden"
+        } bg-primary py-3 text-white  md:hidden `}
+      >
+        <div className="md:hidden">{renderRoute}</div>
         <div
           onClick={() => navigate("/login")}
           className="text-center rounded-3xl mx-3 w-48 md:hidden text-2xl font-semibold flex items-center justify-center bg-white p-3 text-secondary "
@@ -73,9 +83,10 @@ const Sidebar = ({ path }) => {
           </span>
           <p>Logout</p>
         </div>
-     
-     </motion.nav>
-      <aside className={` hidden bg-primary   md:block fixed top-0 bottom-0 py-10 left-0  shadow-2xl `}>
+      </motion.nav>
+      <aside
+        className={` hidden bg-primary   md:block fixed top-0 bottom-0 py-10 left-0  shadow-2xl `}
+      >
         <div className="w-24 mx-auto">
           <img src={logo} alt="logo" />
         </div>

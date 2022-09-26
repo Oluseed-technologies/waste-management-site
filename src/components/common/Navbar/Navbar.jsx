@@ -54,7 +54,7 @@ const Navbar = ({ path }) => {
         style={{ background: "#C3D9C2" }}
         className="flex px-2 md:hidden py-2   justify-between items-center"
       >
-        <span>
+        <span onClick={() => navigate("/")}>
           {" "}
           <img className="w-12" src={siteLogo} />{" "}
         </span>

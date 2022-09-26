@@ -21,6 +21,7 @@ import Manage from "./components/pages/manage/ManageWaste";
 import Company from "./components/pages/manage/Company";
 import Subscription from "./components/pages/manage/Subscription";
 import Profile from "./components/pages/profile/Profile";
+import Testimonials from "./components/pages/Testimonials/Testimonials";
 
 // Vendor dashboard import
 import Dashboard from "./components/Vendor/Dashboard/Dashboard";
@@ -40,8 +41,8 @@ function App() {
     "/about",
     "/contact",
     "/manage-waste",
-
     "/profile",
+    "/testimonials",
   ];
   const arr = showNavPath.find((pagePath, index) => {
     return pagePath === path;
@@ -61,6 +62,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/manage-waste" element={<Manage />} />
         <Route path="/manage-waste/:id" element={<Company />} />
         <Route
