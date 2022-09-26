@@ -1,10 +1,23 @@
 import AboutImage from "../../../assets/About.png";
 import dot from "../../../assets/dot.png";
+import { motion } from "framer-motion";
 const About = () => {
   return (
     <>
-      <div className=" block md:flex  justify-between">
-        <div className="img w-auto relative">
+      <div className="md:flex block">
+        <motion.div
+          initial={{
+            opacity: 0,
+            transform: "translateX(-20rem)",
+          }}
+          whileInView={{
+            opacity: 1,
+            transform: " translateX(0rem)",
+          }}
+          viewport={{ once: false }}
+          transition={{ duration: 1 }}
+          className="img w-auto relative"
+        >
           <img src={AboutImage} className="w-auto" alt="about" />
           <span
             style={{ bottom: "-3rem", left: "-3rem", zIndex: "-3" }}
@@ -12,8 +25,21 @@ const About = () => {
           >
             <img src={dot} alt="dot" />
           </span>
-        </div>
-        <div className="about-text flex max-w-sm  mx-5 justify-between flex-col">
+        </motion.div>
+        <motion.div
+          initial={{
+            opacity: 0,
+            transform: "translateX(20rem)",
+          }}
+          whileInView={{
+            opacity: 1,
+            transform: " translateX(0rem)",
+          }}
+          viewport={{ once: false }}
+          transition={{ duration: 1 }}
+          className="img w-auto relative"
+          className="about-text flex max-w-sm  mx-5 justify-between flex-col"
+        >
           <h3 className="text-secondary">About Us</h3>
           <p className="text-3xl font-bold">
             we make thing smart for you with tech.
@@ -35,7 +61,7 @@ const About = () => {
           <div className="shadow-md p-5 rounded-md my-2">
             <h4 className="text-xl text-dark1 font-medium">150 State Cover</h4>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );

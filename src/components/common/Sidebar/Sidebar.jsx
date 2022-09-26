@@ -33,7 +33,7 @@ const Sidebar = ({ path }) => {
         key={index}
         className={` ${
           path === data.path ? "bg-secondary" : ""
-        }  p-4  flex rounded-l-full md:my-4 md:my-8 items-center   block`}
+        }  p-4  flex rounded-l-full md:my-4 items-center   block`}
         to={`${data.path}`}
       >
         <span>
@@ -79,12 +79,12 @@ const Sidebar = ({ path }) => {
         <div className="w-24 mx-auto">
           <img src={logo} alt="logo" />
         </div>
-        <ul className=" font-semibold text-xl pl-4 text-white py-12">
+        <ul className=" font-semibold text-xl pl-4 text-white py-8">
           {renderRoute}
         </ul>
         <div
           onClick={() => navigate("/login")}
-          className="text-center rounded-3xl mx-3 text-2xl font-semibold flex items-center justify-around bg-white p-6 text-secondary "
+          className="text-center rounded-3xl mx-3 text-2xl font-semibold flex items-center justify-around bg-white p-4 text-secondary "
         >
           <span>
             <img className="w-6" src={logout} alt="logout" />

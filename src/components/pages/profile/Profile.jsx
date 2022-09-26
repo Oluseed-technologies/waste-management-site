@@ -1,7 +1,8 @@
 import Sidebg from "../../../assets/sidebg.png";
 import profileImg from "../../../assets/profileImg.png";
 import user from "./user";
-import style from './Profile.module.css'
+import style from "./Profile.module.css";
+import { motion } from "framer-motion";
 const Profile = () => {
   const arr = new Array(7).fill(0);
   const renderTransaction = arr.map((data) => {
@@ -14,10 +15,9 @@ const Profile = () => {
     );
   });
 
-    const renderSubscription = arr.map((data) => {
+  const renderSubscription = arr.map((data) => {
     return (
       <ul className="flex bg-light p-5 rounded-md my-4 justify-around">
-       
         <li>Olas Waste Mangement</li>
         <li>17</li>
       </ul>
@@ -25,9 +25,13 @@ const Profile = () => {
   });
   return (
     <>
-      <div className="profile   md:m-24">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.7 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="profile   md:m-24"
+      >
         <div
-        
           className={` ${style.profile} md:bg-inherit block md:flex items-center`}
         >
           <div className="w-64 py-6 md:py-0  md:mx-0 mx-auto">
@@ -74,14 +78,13 @@ const Profile = () => {
           </h1>
           <div className="my-8 max-w-lg">
             <ul className="flex justify-around">
-            
               <li>Company</li>
               <li>Days Left</li>
             </ul>
             {renderSubscription}
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

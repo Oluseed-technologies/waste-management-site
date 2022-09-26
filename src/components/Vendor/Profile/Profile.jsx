@@ -1,9 +1,10 @@
-import {Header} from "../Header";
+import { Header } from "../Header";
 import user2 from "../../../assets/VendorProfile.png";
 import star from "../../../assets/star1.png";
 import OurTeam from "../../../components/pages/About/OurTeam";
 import PaymentPlan from "../../../components/pages/manage/PaymentPlan";
-import Footer from '../../../components/common/Footer/Footer'
+import Footer from "../../../components/common/Footer/Footer";
+import { motion } from "framer-motion";
 const Profile = () => {
   const arr = new Array(5).fill(0);
   const renderRating = arr.map((data, index) => {
@@ -15,7 +16,12 @@ const Profile = () => {
   });
   return (
     <>
-      <div className="mx-4 md:ml-72 md:mr-10 my-10">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.7 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="mx-4 md:ml-72 md:mr-10 my-10"
+      >
         <Header />
         <div className="block  md:flex items-center">
           <div>
@@ -25,7 +31,9 @@ const Profile = () => {
             <h1 className="text-primary-100 font-bold md:text-2xl">
               Olaoluwa waste mangement
             </h1>
-            <p className="md:text-2xl my-3">No. 9 Under G Area, Lagos, Nigeria.</p>
+            <p className="md:text-2xl my-3">
+              No. 9 Under G Area, Lagos, Nigeria.
+            </p>
             <p className="md:text-2xl flex items-center text-primary-100 font-bold my-3">
               Rating 4.5 {renderRating}
             </p>
@@ -61,16 +69,16 @@ const Profile = () => {
             Quis tristique morbi sed quisque
           </p>
         </div>
-      </div>
+      </motion.div>
 
       <div className="mx-4 md:ml-72 md:mr-10 my-10">
         <PaymentPlan />
       </div>
       <OurTeam />
 
-       <div className='block md:hidden'>
-      <Footer/>
-       </div>
+      <div className="block md:hidden">
+        <Footer />
+      </div>
     </>
   );
 };

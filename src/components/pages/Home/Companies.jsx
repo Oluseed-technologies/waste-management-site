@@ -5,7 +5,7 @@ const Companies = () => {
   const navigate = useNavigate()
   const renderCompanies = arrs.map((data) => {
     return (
-      <div style={{cursor : 'pointer'}} onClick ={() => navigate('manage-waste/company')} className="flex  md:w-48 mx-2 shadow-md rounded-md md:flex-col my-3">
+      <div style={{cursor : 'pointer'}} onClick ={() => navigate('manage-waste/company')} className="flex  md:w-48 w-72 mx-2 shadow-md rounded-md md:flex-col my-3">
         <img src={img1} className='md:w-auto w-36' alt="company1" />
         <div className="bg-white p-3">
           <div className="text-primary-100 text-xs flex font-bold">
@@ -34,7 +34,7 @@ const Companies = () => {
           pariatur excepteur sint occaecat cupidatat.
         </p>
         <div className="text-start">
-          <div className="flex justify-between my-5 flex-wrap">
+          <div className="flex md:justify-between justify-center my-5 flex-wrap">
             {renderCompanies}
           </div>
           <div className="btn flex justify-center">

@@ -1,7 +1,9 @@
 body {
   font-family: "Poppins", sans-serif;
 }
-
+.font-mono {
+font-family: 'DM Mono', monospace;
+}
 .text-primary {
   color: #3caa35;
 }

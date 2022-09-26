@@ -1,9 +1,16 @@
 import { NavLink } from "react-router-dom";
 import largebg from "../../../assets/largebg.png";
+import { motion } from "framer-motion";
 const Login = () => {
   return (
     <>
-      <div style={{ background: `url(${largebg})` }} className="Login py-36">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.7 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        style={{ background: `url(${largebg})` }}
+        className="Login py-36"
+      >
         <div className="flex flex-col items-center  jusify-center">
           <div className="bg-white shadow-lg rounded-xl p-8 ">
             <h1 className="text-2xl text-primary  text-center font-semibold">
@@ -40,7 +47,7 @@ const Login = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

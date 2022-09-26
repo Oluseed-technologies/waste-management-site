@@ -1,15 +1,30 @@
 import people from "../../../assets/people.png";
 import colon from "../../../assets/colon.png";
+import { motion } from "framer-motion";
 const Testimonial = () => {
   return (
     <>
       <div className="testimonial block md:flex justify-between  items-center  ">
-        <div className="">
+        <motion.div
+          initial={{
+            opacity: 0,
+            transform: "translateX(-20rem)",
+          }}
+          whileInView={{
+            opacity: 1,
+            transform: " translateX(0rem)",
+          }}
+          viewport={{ once: false }}
+          transition={{ duration: 1 }}
+          className=""
+        >
           <h1 className="text-primary flex items-center">
             <span className="w-8 mr-3  bg-primary h-0.5"></span>
             Testimonials
           </h1>
-          <p className="md:text-3xl text-xl font-medium my-7">What Our Customer Say</p>
+          <p className="md:text-3xl text-xl font-medium my-7">
+            What Our Customer Say
+          </p>
           <div className="flex">
             <span className="mx-3">
               <img src={colon} className="w-16" alt="colon" />
@@ -24,10 +39,23 @@ const Testimonial = () => {
               <p className="font-ligth text-xs my-3">Product Designer</p>
             </div>
           </div>
-        </div>
-        <div className="">
+        </motion.div>
+        <motion.div
+          initial={{
+            opacity: 0,
+            transform: "translateX(20rem)",
+          }}
+          whileInView={{
+            opacity: 1,
+            transform: " translateX(0rem)",
+          }}
+          viewport={{ once: false }}
+          transition={{ duration: 1 }}
+          className=""
+          className=""
+        >
           <img src={people} alt="peole" />
-        </div>
+        </motion.div>
       </div>
     </>
   );

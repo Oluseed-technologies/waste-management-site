@@ -1,6 +1,7 @@
 import pickUp from "./pickup.json";
 import tractor from "../../../assets/tractor1.png";
-import style from "./Header.module.css"
+import style from "./Header.module.css";
+import { motion } from "framer-motion";
 const Header = () => {
   const renderPickups = pickUp.map((data) => {
     return (
@@ -20,22 +21,46 @@ const Header = () => {
     );
   });
   return (
-    <div className={`  block relative md:flex justify-between pl-4 pr-4  md:pl-64 my-10 md:pr-20`}>
-    <div className={` ${style.header_bg}`}>
-      <section className={`  shadow-lg  bg-white  text-lg p-7 `}>
+    <div
+      className={`  block relative md:flex justify-between h-min pl-4 pr-4  md:pl-64 my-10 md:pr-20`}
+    >
+      <motion.section
+        initial={{
+          opacity: 0,
+          transform: "translateX(-20rem)",
+        }}
+        whileInView={{
+          opacity: 1,
+          transform: " translateX(0rem)",
+        }}
+        viewport={{ once: false }}
+        transition={{ duration: 1 }}
+        className=""
+        className={` shadow-lg  bg-white  0  text-lg p-7 `}
+      >
         <h2 className="font-bold">Schedule a pickup</h2>
         <p className="my-3 text-sm text-gray-600  font-rubik">
           Dispose your waste throuh hygenic means
         </p>
         {renderPickups}
-      </section>
-      </div>
-      <section
-     
+      </motion.section>
+
+      <motion.section
+        initial={{
+          opacity: 0,
+          transform: "translateX(20rem)",
+        }}
+        whileInView={{
+          opacity: 1,
+          transform: " translateX(0rem)",
+        }}
+        viewport={{ once: false }}
+        transition={{ duration: 1 }}
+        className=""
         className="hidden md:block"
       >
         <img src={tractor} alt="tractor" />
-      </section>
+      </motion.section>
     </div>
   );
 };

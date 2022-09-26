@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div className="App">
-      {path === arr ? <Navbar /> : <Sidebar path={path} />}
+      {path === arr ? <Navbar path={path} /> : <Sidebar path={path} />}
 
       <Routes>
         <Route path="/" element={<Home />} />

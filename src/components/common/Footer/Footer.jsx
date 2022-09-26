@@ -7,7 +7,7 @@ import linkediln from "../../../assets/linkediln.png";
 import pinterest from "../../../assets/pinterest.png";
 const Footer = () => {
   return (
-    <footer className={` ${style.footer} md:px-64 px-4  text-start md:py-24 py-10`}>
+    <footer className={` ${style.footer} md:px-64 px-4  text-start  py-10`}>
       <div className="block md:flex justify-between pb-12 border-b-2 border-grey-300 border-solid">
         <div className="">
           <h3 className='text-center md:text-start'>Join Our Newsletter</h3>

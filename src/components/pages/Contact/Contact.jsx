@@ -4,12 +4,18 @@ import Youtube from "../../../assets/Youtube2.png";
 import Facebook from "../../../assets/Facebook2.png";
 import Instagram from "../../../assets/Instagram2.png";
 import Twitter from "../../../assets/Twitter2.png";
-import style from './Contact.module.css'
+import style from "./Contact.module.css";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
     <>
-      <div  className={`${style.contact}`}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.7 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className={`${style.contact}`}
+      >
         <main
           style={{ background: `url(${bg})` }}
           className="contact relative px-10 pt-32 pb-52"
@@ -77,7 +83,7 @@ const Contact = () => {
             </div>
           </div>
         </main>
-      </div>
+      </motion.div>
     </>
   );
 };

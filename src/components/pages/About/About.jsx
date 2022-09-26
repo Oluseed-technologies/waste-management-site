@@ -1,14 +1,24 @@
 import bg from "../../../assets/bg2.png";
 import logo from "../../../assets/logo2.png";
 import OurTeam from "./OurTeam";
+import { motion } from "framer-motion";
 const About = () => {
   return (
     <>
-      <div className="container">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.7 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="container"
+      >
         <main style={{ background: `url(${bg})` }} className="Login py-20">
-        <div className="logo">
-              <img src={logo} className='md:hidden md:w-auto w-36 mx-auto'  alt="logo" />
-            </div>
+          <div className="logo">
+            <img
+              src={logo}
+              className="md:hidden md:w-auto w-36 mx-auto"
+              alt="logo"
+            />
+          </div>
           <div className=" hidden md:flex items-center justify-around">
             <div className="logo">
               <img src={logo} alt="logo" />
@@ -74,7 +84,7 @@ const About = () => {
           </p>
         </div>
         <OurTeam />
-      </div>
+      </motion.div>
     </>
   );
 };
