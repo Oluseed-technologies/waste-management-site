@@ -32,32 +32,33 @@ const Header = () => {
   });
   return (
     <div
-      className={`  block relative md:flex justify-between items-center h-min pl-4 pr-4  md:pl-64 my-10 md:pr-20`}
+      className={` ${style.header_bg} block relative md:flex   justify-between items-center h-min pl-4 pr-4  md:pl-64 my-10 md:pr-20`}
     >
-      <motion.section
-        initial={{
-          opacity: 0,
-          transform: "translateX(-20rem)",
-        }}
-        whileInView={{
-          opacity: 1,
-          transform: " translateX(0rem)",
-        }}
-        viewport={{ once: false }}
-        transition={{ duration: 1 }}
-        className=""
-        className={` shadow-lg  bg-white  0  text-lg p-7 `}
-      >
-        <h2 className="font-medium text-xl">Schedule a pickup</h2>
-        <p className="my-3 text-sm text-gray-600  font-rubik">
-          Dispose your waste throuh hygenic means
-        </p>
-        {renderPickups}
-        <button className="w-full bg-primary rounded-md font-mont text-white py-3">
-          Fix Schedule
-        </button>
-      </motion.section>
-
+      <div className="md:scale-100 scale-75">
+        <motion.section
+          initial={{
+            opacity: 0,
+            transform: "translateX(-20rem)",
+          }}
+          whileInView={{
+            opacity: 1,
+            transform: " translateX(0rem)",
+          }}
+          viewport={{ once: false }}
+          transition={{ duration: 1 }}
+          className=""
+          className={` shadow-lg  bg-white   0  text-lg p-7 `}
+        >
+          <h2 className="font-medium text-xl">Schedule a pickup</h2>
+          <p className="my-3 text-sm text-gray-600  font-rubik">
+            Dispose your waste throuh hygenic means
+          </p>
+          {renderPickups}
+          <button className="w-full bg-primary rounded-md font-mont text-white py-3">
+            Fix Schedule
+          </button>
+        </motion.section>
+      </div>
       <motion.section
         initial={{
           opacity: 0,
