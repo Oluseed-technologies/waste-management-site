@@ -16,7 +16,7 @@ const Login = () => {
             <h1 className="text-2xl text-primary  text-center font-semibold">
               Sign In
             </h1>
-            <form className="my-5">
+            <form className="my-5 scale-75">
               <div className="form-input flex flex-col">
                 <label htmlFor="email">Email</label>
                 <input
