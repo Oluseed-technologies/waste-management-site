@@ -1,7 +1,7 @@
 import img1 from "../../../assets/img5.png";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { AnimationOnScroll } from "react-animation-on-scroll";
+import ScrollAnimation from "react-animate-on-scroll";
 import "animate.css/animate.min.css";
 const Companies = () => {
   const arrs = new Array(8).fill(0);
@@ -20,9 +20,9 @@ const Companies = () => {
           transform: " translateX(0rem)",
         }}
         viewport={{ once: false }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5 }}
         style={{ cursor: "pointer" }}
-        onClick={() => navigate("manage-waste/company")}
+        onClick={() => navigate(`/manage-waste/company-${index}`)}
         className="flex  md:w-48 w-72 mx-2 shadow-md rounded-md md:flex-col my-3"
       >
         <img src={img1} className="md:w-auto w-36" alt="company1" />
@@ -44,7 +44,7 @@ const Companies = () => {
         style={{ background: " rgba(60, 170, 53, 0.1" }}
         className="px-2 md:px-64  py-24"
       >
-        <AnimationOnScroll animateIn="animate__bounceIn">
+        <ScrollAnimation animateIn="animate__bounceIn">
           <h1 className="text-3xl text-center font-bold">
             Our Waste Management Company
           </h1>
@@ -53,7 +53,7 @@ const Companies = () => {
             aliquip duis aute irure dolorin reprehenderits vol dolore fugiat
             nulla pariatur excepteur sint occaecat cupidatat.
           </p>
-        </AnimationOnScroll>
+        </ScrollAnimation>
 
         <div className="text-start">
           <div className="flex md:justify-between justify-center my-5 flex-wrap">

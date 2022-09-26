@@ -10,8 +10,39 @@ import Companies from "./Companies";
 import About from "./About";
 import Testimonial from "./Testimonial";
 import OurApp from "./OurApp";
+import { Features } from "./Features";
 
 const Home = () => {
+  const images = [icon1, icon3, icon2];
+  const renderFeatures = Features.map((data, index) => {
+    return (
+      <motion.div
+        initial={{
+          opacity: 0,
+          transform: `${
+            index % 2 === 0 ? "translateX(-20rem)" : "translateX(20rem)"
+          } `,
+        }}
+        whileInView={{
+          opacity: 1,
+          transform: " translateX(0rem)",
+        }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.5 }}
+        key={index}
+        className="flex flex-col items-center justify-center"
+      >
+        <span className="my-2">
+          {" "}
+          <img className="md:w-14 w-10" src={images[index]} alt="icon1" />
+        </span>
+        <h2 className="font-bold text-center">{data.name}</h2>
+        <p className="font-lighter  text-center text-sm my-5 text-dark2">
+          {data.text}
+        </p>
+      </motion.div>
+    );
+  });
   return (
     <>
       <motion.div
@@ -20,7 +51,7 @@ const Home = () => {
         transition={{ duration: 0.5 }}
       >
         <Header />
-        <motion.div className="flex flex-col mx-auto  my-24 justify-center  items-center">
+        <div className="flex flex-col mx-auto  my-24 justify-center  items-center">
           <ScrollAnimation animateIn="animate__bounceIn">
             <h2 className="my-4 text-center">Manage Your Waste</h2>
             <div className=" font-bold text-center text-md md:text-4xl">
@@ -30,39 +61,7 @@ const Home = () => {
 
           {/* Manage Waste */}
           <div className="block  md:flex justify-center   md:px-64 px-2 my-8 items-center">
-            <div className="flex flex-col items-center justify-center">
-              <span className="my-2">
-                {" "}
-                <img className="md:w-14 w-10" src={icon1} alt="icon1" />
-              </span>
-              <h2 className="font-bold text-center">Search Location</h2>
-              <p className="font-lighter  text-center text-sm my-5 text-dark2">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium.
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center">
-              <span className="my-2">
-                {" "}
-                <img className="md:w-14 w-10" src={icon3} alt="icon1" />
-              </span>
-              <h2 className="font-bold text-center">Select Date & Time</h2>
-              <p className="font-lighter text-center text-sm my-5 text-dark2">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium.
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center">
-              <span className="my-2">
-                {" "}
-                <img className="md:w-14 w-10" src={icon2} alt="icon1" />
-              </span>
-              <h2 className="font-bold text-center">Pick up</h2>
-              <p className="font-lighter text-center text-sm my-5 text-dark2">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium.
-              </p>
-            </div>
+            {renderFeatures}
           </div>
 
           {/* Companies */}
@@ -73,7 +72,7 @@ const Home = () => {
           <div className="md:px-64 px-4 text-start py-24">
             <About />
           </div>
-        </motion.div>
+        </div>
         <div className="tractor-bg flex flex-col items-center justify-center  py-16">
           {/* <h1>hello</h1> */}
           <p className="text-white text-center text-4xl">

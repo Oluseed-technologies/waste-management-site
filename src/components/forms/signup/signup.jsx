@@ -11,19 +11,19 @@ const Login = () => {
         style={{ background: `url(${largebg})` }}
         className="Login py-36"
       >
-        <div className="flex flex-col items-center  jusify-center">
+        <div className="flex scale-75 flex-col items-center  jusify-center">
           <div className="bg-white shadow-lg rounded-xl p-8 ">
             <h1 className="text-2xl text-primary  text-center font-semibold">
               Sign In
             </h1>
-            <form className="my-5 scale-75">
+            <form className="my-5 ">
               <div className="form-input flex flex-col">
                 <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   placeholder="email"
                   style={{ border: "1px solid #838383" }}
-                  className=" p-2 text-dark2rounded-sm my-2 shadow-sm"
+                  className=" p-2 text-dark2 rounded-sm my-2 shadow-sm"
                 />
               </div>
               <div className="form-input flex flex-col">

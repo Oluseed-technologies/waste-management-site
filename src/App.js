@@ -31,6 +31,8 @@ import VendorProfile from "./components/Vendor/Profile/Profile";
 function App() {
   const location = useLocation();
   const path = location.pathname;
+  const path2 = window.location.pathname.split("/")[1];
+  console.log(path2);
   const showNavPath = [
     "/",
     "/login",
@@ -38,8 +40,7 @@ function App() {
     "/about",
     "/contact",
     "/manage-waste",
-    "/manage-waste/company",
-    "/manage-waste/subscription",
+
     "/profile",
   ];
   const arr = showNavPath.find((pagePath, index) => {
@@ -48,7 +49,11 @@ function App() {
 
   return (
     <div className="App">
-      {path === arr ? <Navbar path={path} /> : <Sidebar path={path} />}
+      {path === arr || path2 === "manage-waste" ? (
+        <Navbar path={path} />
+      ) : (
+        <Sidebar path={path} />
+      )}
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -57,8 +62,11 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/manage-waste" element={<Manage />} />
-        <Route path="/manage-waste/company" element={<Company />} />
-        <Route path="/manage-waste/subscription" element={<Subscription />} />
+        <Route path="/manage-waste/:id" element={<Company />} />
+        <Route
+          path="/manage-waste/subscription/:plan"
+          element={<Subscription />}
+        />
         <Route path="/profile" element={<Profile />} />
         <Route path="/vendor/transaction" element={<Transaction />} />
         <Route path="/vendor/account" element={<Account />} />
@@ -66,7 +74,6 @@ function App() {
         <Route path="/vendor/dashboard" element={<Dashboard />} />
       </Routes>
       {path === arr ? <Footer /> : ""}
-    
     </div>
   );
 }

@@ -1,15 +1,18 @@
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import Company1 from "../../../assets/company1.png";
 
 const SimilarCompanies = () => {
   const arr1 = new Array(4).fill(0);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const renderCompanies = arr1.map((data, index) => {
     return (
-      <div onClick ={() => navigate('/manage-waste/company')} className="-flex w-full md:w-56 mx-2 shadow-md rounded-md flex-col my-3">
+      <div
+        onClick={() => navigate(`/manage-waste/company-${index}`)}
+        className="-flex w-full md:w-56 mx-2 shadow-md rounded-md flex-col my-3"
+      >
         <img src={Company1} className="w-full" alt="company1" />
         <div className="bg-white p-3">
-          <div className="text-primary-100 text-xs flex font-bold">
+          <div className="text-primary-100 text-xs  flex justify-between font-bold">
             <p>Olaoluwa Waste Management</p>
             <p className="text-secondary">2500</p>
           </div>
@@ -27,8 +30,10 @@ const SimilarCompanies = () => {
       >
         Similar Companies
       </h1>
-      <div className="md:m-20 m-4 md:flex block justify-between">{renderCompanies}</div>;
-      {/* <div className="mx-auto//"> */}
+      <div className="md:m-20 m-4 md:flex block justify-between">
+        {renderCompanies}
+      </div>
+      ;{/* <div className="mx-auto//"> */}
       <button className="font-mont w-64 mx-auto block py-2 bg-primary rounded-md text-white">
         See more...
       </button>
