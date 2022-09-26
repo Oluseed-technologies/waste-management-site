@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { AnimationOnScroll } from "react-animation-on-scroll";
+import ScrollAnimation from "react-animate-on-scroll";
 import "animate.css/animate.min.css";
 import tick from "../../../assets/tick.png";
 import icon1 from "../../../assets/icon1.png";
@@ -21,12 +21,12 @@ const Home = () => {
       >
         <Header />
         <motion.div className="flex flex-col mx-auto  my-24 justify-center  items-center">
-          <AnimationOnScroll animateIn="animate__bounceIn">
+          <ScrollAnimation animateIn="animate__bounceIn">
             <h2 className="my-4 text-center">Manage Your Waste</h2>
             <div className=" font-bold text-center text-md md:text-4xl">
               Quick & easy Waste Management
             </div>
-          </AnimationOnScroll>
+          </ScrollAnimation>
 
           {/* Manage Waste */}
           <div className="block  md:flex justify-center   md:px-64 px-2 my-8 items-center">
