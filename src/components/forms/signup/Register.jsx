@@ -7,12 +7,18 @@ const Register = () => {
   const renderInputs = Inputs.map((data, index) => {
     return (
       <div key={data.name} className="form-input flex flex-col">
-        <label htmlFor={data.label}>{data.label}</label>
+        <label
+          style={{ color: " #565656" }}
+          className="md:text-base text-xl"
+          htmlFor={data.label}
+        >
+          {data.label}
+        </label>
         <input
           type={data.type}
           placeholder={data.label}
           style={{ border: "1px solid #838383" }}
-          className=" p-2 my-2 text-dark2 w-full font-light rounded-sm "
+          className=" p-2 my-2  text-dark2 w-full font-light rounded-sm "
         />
       </div>
     );
