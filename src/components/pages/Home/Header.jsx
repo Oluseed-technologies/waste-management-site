@@ -1,9 +1,6 @@
 import pickUp from "./pickup.json";
 import { MdLocationOn, MdDirectionsCar, MdCalendarToday } from "react-icons/md";
 import tractor from "../../../assets/tractor1.png";
-import location from "../../../assets/location.png";
-import calendar from "../../../assets/calendar-2.png";
-import driving from "../../../assets/driving.png";
 import style from "./Header.module.css";
 import { motion } from "framer-motion";
 const Header = () => {
