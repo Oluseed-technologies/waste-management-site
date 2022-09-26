@@ -1,8 +1,12 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+html,
+body {
+  overflow-x: hidden;
+}
 .font-mono {
-font-family: 'DM Mono', monospace;
+  font-family: "DM Mono", monospace;
 }
 .text-primary {
   color: #3caa35;
@@ -14,7 +18,7 @@ font-family: 'DM Mono', monospace;
   color: #1d6558;
 }
 .text-primary-200 {
-  color : #48BB78;
+  color: #48bb78;
 }
 .bg-primary {
   background: #3caa35;
@@ -44,23 +48,21 @@ font-family: 'DM Mono', monospace;
   background: rgba(196, 196, 196, 0.2);
 }
 .bg-light-200 {
-  background :  #E8E8E8;
-  
+  background: #e8e8e8;
 }
 .bg-light-300 {
-  background: #C3D9C2;
+  background: #c3d9c2;
 }
 .bg-light-400 {
-  background: #E7E5E5;
+  background: #e7e5e5;
 }
 .bg-light-500 {
-  background :#F7FAFC;
+  background: #f7fafc;
 }
 .text-light {
   color: #8c8181;
 }
 .shadow-normal {
-
   box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.05);
 }
 .bg-opacity {
@@ -105,7 +107,7 @@ font-family: 'DM Mono', monospace;
   color: #2e2e48;
 }
 .text-dark8 {
-  color : #A0AEC0;
+  color: #a0aec0;
 }
 ul,
 li {

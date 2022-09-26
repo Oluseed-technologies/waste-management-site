@@ -22,7 +22,7 @@ const Header = () => {
   });
   return (
     <div
-      className={`  block relative md:flex justify-between h-min pl-4 pr-4  md:pl-64 my-10 md:pr-20`}
+      className={`  block relative md:flex justify-between items-center h-min pl-4 pr-4  md:pl-64 my-10 md:pr-20`}
     >
       <motion.section
         initial={{

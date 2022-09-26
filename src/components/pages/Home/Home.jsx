@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { AnimationOnScroll } from "react-animation-on-scroll";
+import "animate.css/animate.min.css";
 import tick from "../../../assets/tick.png";
 import icon1 from "../../../assets/icon1.png";
 import icon2 from "../../../assets/icon2.png";
@@ -18,24 +20,14 @@ const Home = () => {
         transition={{ duration: 0.5 }}
       >
         <Header />
-        <motion.div
-          // initial={{
-          //   opacity: 0,
-          //   transform: "scale(0.7)",
-          // }}
-          // whileInView={{
-          //   opacity: 1,
-          //   transform: " scale(1)",
-          // }}
-          // viewport={{ once: false }}
-          // transition={{ duration: 1 }}
-          className=""
-          className="flex flex-col mx-auto  my-24 justify-center  items-center"
-        >
-          <h2 className="my-4 ">Manage Your Waste</h2>
-          <div className=" font-bold text-center text-md md:text-4xl">
-            Quick & easy Waste Management
-          </div>
+        <motion.div className="flex flex-col mx-auto  my-24 justify-center  items-center">
+          <AnimationOnScroll animateIn="animate__bounceIn">
+            <h2 className="my-4 text-center">Manage Your Waste</h2>
+            <div className=" font-bold text-center text-md md:text-4xl">
+              Quick & easy Waste Management
+            </div>
+          </AnimationOnScroll>
+
           {/* Manage Waste */}
           <div className="block  md:flex justify-center   md:px-64 px-2 my-8 items-center">
             <div className="flex flex-col items-center justify-center">
