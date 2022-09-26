@@ -11,7 +11,7 @@ const Login = () => {
         style={{ background: `url(${largebg})` }}
         className="Login py-36"
       >
-        <div className="flex scale-75 flex-col items-center  jusify-center">
+        <div className="flex md:scale-100 scale-75 flex-col items-center  jusify-center">
           <div className="bg-white shadow-lg rounded-xl p-8 ">
             <h1 className="text-2xl text-primary  text-center font-semibold">
               Sign In
