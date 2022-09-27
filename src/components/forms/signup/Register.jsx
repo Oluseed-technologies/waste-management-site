@@ -1,9 +1,46 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import largebg from "../../../assets/largebg.png";
 import { motion } from "framer-motion";
 import { Inputs } from "./FormInputs";
+import { Validate } from "../ValidateForm";
+import { ToastContainer, Zoom } from "react-toastify";
+import {
+  ErrorNotification,
+  InfoNotification,
+  SuccessNotification,
+} from "../../common/ErrorToast";
+import "react-toastify/dist/ReactToastify.css";
+import SweetAlert2 from "react-sweetalert2";
 const Register = () => {
-  console.log(Inputs);
+  const [values, setValues] = useState({});
+  const [formErrors, setFormErrors] = useState({});
+  const [swalProps, setSwalProps] = useState({});
+  const [show, setShow] = useState(false);
+
+  const handleValues = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+    setFormErrors(Validate(values));
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(values);
+    if (Object.keys(values).length === 0) {
+      ErrorNotification("Inputs field cannot be empty");
+      return;
+    } else if (Object.keys(formErrors).length === 0) {
+      SuccessNotification("User logged signup successfully ");
+      console.log("User logged signup successfully ");
+      return;
+    }
+
+    console.log(formErrors);
+    if (Object.values(formErrors) !== 0) {
+      ErrorNotification(Object.values(formErrors)[0]);
+    }
+    console.log(Object.values(formErrors));
+  };
+
   const renderInputs = Inputs.map((data, index) => {
     return (
       <div key={data.name} className="form-input flex flex-col">
@@ -15,8 +52,11 @@ const Register = () => {
           {data.label}
         </label>
         <input
+          name={data.name}
+          onChange={handleValues}
           type={data.type}
           placeholder={data.label}
+          required
           style={{ border: "1px solid #838383" }}
           className=" p-2 my-2  text-dark2 w-full font-light rounded-sm "
         />
@@ -25,6 +65,8 @@ const Register = () => {
   });
   return (
     <>
+      <SweetAlert2 {...swalProps} />
+      <ToastContainer transition={Zoom} autoClose={800} />
       <motion.div
         initial={{ opacity: 0, scale: 0.7 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -43,7 +85,10 @@ const Register = () => {
               </div>
 
               <div className="flex justify-center">
-                <button className="bg-primary block md:w-48 w-full my-2 rounded-md text-white py-2 font-mont">
+                <button
+                  onClick={handleSubmit}
+                  className="bg-primary block md:w-48 w-full my-2 rounded-md text-white py-2 font-mont"
+                >
                   Sign In
                 </button>
               </div>

@@ -11,7 +11,7 @@ export const Inputs = [
   },
 
   {
-    name: "Email",
+    name: "email",
     label: "Email",
     type: "email",
   },
@@ -22,12 +22,12 @@ export const Inputs = [
     type: "password",
   },
   {
-    name: "confirm password",
+    name: "confirmPassword",
     label: "Confirm Password",
     type: "password",
   },
   {
-    name: "phone number",
+    name: "phone",
     label: "Phone Number",
     type: "number",
   },

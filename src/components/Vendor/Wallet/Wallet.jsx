@@ -48,11 +48,11 @@ const Wallet = () => {
             </span>
           </div>
         </p>
-        <h3 className="my-3 md:hidden text-secondary">PAYMENY METHOD</h3>
+        <h3 className="my-3 md:hidden text-primary">PAYMENY METHOD</h3>
         <p>Account Transfer</p>
-        <h3 className="my-3 md:hidden text-primary">DATE/TIME</h3>
+        <h3 className="my-3 md:hidden text-secondary">DATE/TIME</h3>
         <p>Yesterday</p>
-        <h3 className="my-3 md:hidden text-secondary">STATUS</h3>
+        <h3 className="my-3 md:hidden text-primary">STATUS</h3>
         <p>Failed</p>
       </div>
     );

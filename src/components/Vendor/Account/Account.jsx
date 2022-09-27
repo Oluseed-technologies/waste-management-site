@@ -7,7 +7,7 @@ const Dashboard = () => {
   const arr = new Array(6).fill(0);
   const renderUsers = arr.map((data) => {
     return (
-      <div className="border-b-2 my-6 py-4 w-full block md:grid grid-cols-3  font-mono items-center md:oveflow:hidden overflow:scroll  border-solid border-grey-900">
+      <div className="border-b-2 my-6 px-2 md:px-0 py-4 w-full block md:grid grid-cols-3  font-mono items-center md:oveflow:hidden overflow:scroll  border-solid border-grey-900">
         <div className="flex items-center">
           <div
             className="hidden md:block"
@@ -26,7 +26,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="">
-          <p className="md:text-md font-mono my-3 md:hidden text-primary">
+          <p className="md:text-md font-mono my-3 md:hidden text-secondary">
             SUBSCRIPTION
           </p>
           <h1>17TH MAR - 17TH APRIL</h1>
@@ -60,7 +60,7 @@ const Dashboard = () => {
             <p>SUBSCRIPTIONS</p>
             <p>STATUS</p>
           </div>
-          {renderUsers}
+          <div className="grid grid-cols-2 md:block"> {renderUsers}</div>
         </div>
       </motion.div>
       <div className="block md:hidden">
