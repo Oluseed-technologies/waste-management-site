@@ -57,11 +57,11 @@ const Dashboard = () => {
             </button>
           </div>
           <div className="  ">
-            <div className="flex  bg-light-500 p-3  justify-between items-center">
-              <h2>PAGE NAME </h2>
-              <h2> VISITORS </h2>
-              <h2> UNIQUE USERS </h2>
-              <h2> BOUNCE RATE </h2>
+            <div className="flex  bg-light-500 p-3 md:text-base overflow-scroll text-sm justify-between items-center">
+              <p>PAGE NAME </p>
+              <p> VISITORS </p>
+              <p> UNIQUE USERS </p>
+              <p> BOUNCE RATE </p>
             </div>
             <div className="p-4"> {renderPageView} </div>
           </div>

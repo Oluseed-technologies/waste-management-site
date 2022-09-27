@@ -14,5 +14,9 @@
   {
     "name": "Profile",
     "path": "/vendor/profile"
+  },
+  {
+    "name": "Wallet",
+    "path": "/vendor/wallet"
   }
 ]

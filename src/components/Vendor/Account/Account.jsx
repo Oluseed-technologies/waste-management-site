@@ -7,12 +7,18 @@ const Dashboard = () => {
   const arr = new Array(6).fill(0);
   const renderUsers = arr.map((data) => {
     return (
-      <div className="border-b-2 my-6 py-4 w-full  grid-cols-3 grid font-mono items-center md:oveflow:hidden overflow:scroll  border-solid border-grey-900">
+      <div className="border-b-2 my-6 py-4 w-full block md:grid grid-cols-3  font-mono items-center md:oveflow:hidden overflow:scroll  border-solid border-grey-900">
         <div className="flex items-center">
-          <div style={{ padding: "10px", paddingLeft: "0" }}>
+          <div
+            className="hidden md:block"
+            style={{ padding: "10px", paddingLeft: "0" }}
+          >
             <img className="md:w-16 hidden md:block" alt="img" src={user2} />
           </div>
-          <div className="mx-3">
+          <div className="md:mx-3 mx-0">
+            <p className="md:text-md font-mono my-3 md:hidden text-primary">
+              USER
+            </p>
             <h2 style={{ color: "#2D3748" }} className="font-semibold">
               Esther Jackson
             </h2>
@@ -20,8 +26,14 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="">
+          <p className="md:text-md font-mono my-3 md:hidden text-primary">
+            SUBSCRIPTION
+          </p>
           <h1>17TH MAR - 17TH APRIL</h1>
         </div>
+        <p className="md:text-md font-mono md:hidden text-primary  my-3 ">
+          STATUS
+        </p>
         {/* <div className="bg-primary rounded-2xl text-white text-center "> */}
         <div>Active </div>
         {/* <td>
@@ -43,12 +55,11 @@ const Dashboard = () => {
 
         <h1 className="text-3xl font-bold text-dark7">Accounts</h1>
         <div className="my-5 ">
-          <div className="md:text-md font-mono grid-cols-3  grid   text-dark1">
-            <p className="">USERS</p>
-            <p className="">SUBSCRIPTION</p>
-            <p className="">STATUS</p>
+          <div className="md:text-md hidden md:grid grid grid-cols-3 font-mono my-3 text-dark1">
+            <p>USERS</p>
+            <p>SUBSCRIPTIONS</p>
+            <p>STATUS</p>
           </div>
-
           {renderUsers}
         </div>
       </motion.div>

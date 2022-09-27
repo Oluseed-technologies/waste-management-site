@@ -28,6 +28,7 @@ import Dashboard from "./components/Vendor/Dashboard/Dashboard";
 import Account from "./components/Vendor/Account/Account";
 import Transaction from "./components/Vendor/Transaction/Transaction";
 import VendorProfile from "./components/Vendor/Profile/Profile";
+import Wallet from "./components/Vendor/Wallet/Wallet";
 
 function App() {
   const location = useLocation();
@@ -74,6 +75,7 @@ function App() {
         <Route path="/vendor/account" element={<Account />} />
         <Route path="/vendor/profile" element={<VendorProfile />} />
         <Route path="/vendor/dashboard" element={<Dashboard />} />
+        <Route path="/vendor/wallet" element={<Wallet />} />
       </Routes>
       {path === arr ? <Footer /> : ""}
     </div>

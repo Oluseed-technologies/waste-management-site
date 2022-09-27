@@ -14,7 +14,7 @@ import cancel from "../../../assets/cancel.png";
 import siteLogo from "../../../assets/logo.png";
 const Sidebar = ({ path }) => {
   const navigate = useNavigate();
-  const images = [dashboard, user, wallet, user];
+  const images = [dashboard, user, wallet, user, wallet];
   const [isOpen, setIsOpen] = useState(false);
 
   const closeRoute = () => {
@@ -76,16 +76,16 @@ const Sidebar = ({ path }) => {
         <div className="md:hidden">{renderRoute}</div>
         <div
           onClick={() => navigate("/login")}
-          className="text-center rounded-3xl mx-3 w-48 md:hidden text-2xl font-semibold flex items-center justify-center bg-white p-3 text-secondary "
+          className="text-center rounded-3xl  w-48 md:hidden text-xl font-semibold flex items-center mx-3 bg-wht p- text-secondary "
         >
           <span>
-            <img className="w-6 mx-2" src={logout} alt="logout" />
+            <img className="w-5 my-4 mx-2" src={logout} alt="logout" />
           </span>
           <p>Logout</p>
         </div>
       </motion.nav>
       <aside
-        className={` hidden bg-primary   md:block fixed top-0 bottom-0 py-10 left-0  shadow-2xl `}
+        className={` hidden bg-primary   md:block fixed top-0 py-10 pb-52 left-0  shadow-2xl `}
       >
         <div className="w-24 mx-auto">
           <img src={logo} alt="logo" />
