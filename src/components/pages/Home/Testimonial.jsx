@@ -51,8 +51,6 @@ const Testimonial = () => {
           }}
           viewport={{ once: false }}
           transition={{ duration: 1 }}
-          className=""
-          className=""
         >
           <img src={people} alt="peole" />
         </motion.div>

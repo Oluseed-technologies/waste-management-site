@@ -46,7 +46,6 @@ const Header = () => {
           }}
           viewport={{ once: false }}
           transition={{ duration: 1 }}
-          className=""
           className={` shadow-lg  bg-white   0  text-lg p-7 `}
         >
           <h2 className="font-medium text-xl">Schedule a pickup</h2>
@@ -70,7 +69,6 @@ const Header = () => {
         }}
         viewport={{ once: false }}
         transition={{ duration: 1 }}
-        className=""
         className="hidden md:block"
       >
         <img src={tractor} alt="tractor" />

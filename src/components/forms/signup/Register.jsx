@@ -11,68 +11,51 @@ import {
   SuccessNotification,
 } from "../../common/ErrorToast";
 import "react-toastify/dist/ReactToastify.css";
-import SweetAlert2 from "react-sweetalert2";
+import FormComplete from "./FormComplete";
+import { InputComponent } from "../../common/InputComponent";
+import { RegisterInput } from "./FormInputs";
+
 const Register = () => {
-  const [values, setValues] = useState({});
+  const [values, setValues] = useState(RegisterInput);
+  const [open, setOpen] = useState(false);
   const [formErrors, setFormErrors] = useState({});
-  const [swalProps, setSwalProps] = useState({});
-  const [show, setShow] = useState(false);
 
   const handleValues = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
+    // setValues({ ...values, [e.target.name]: e.target.value });
     setFormErrors(Validate(values));
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    setOpen(true);
     console.log(values);
-    if (Object.keys(values).length === 0) {
-      ErrorNotification("Inputs field cannot be empty");
-      return;
-    } else if (Object.keys(formErrors).length === 0) {
-      SuccessNotification("User logged signup successfully ");
-      console.log("User logged signup successfully ");
-      return;
-    }
+    console.log("welcome bro");
+    // console.log(values);
+    // if (Object.keys(values).length === 0) {
+    //   ErrorNotification("Inputs field cannot be empty");
+    //   return;
+    // } else if (Object.keys(formErrors).length === 0) {
+    //   SuccessNotification("User logged signup successfully ");
+    //   console.log("User logged signup successfully ");
+    //   return;
+    // }
 
-    console.log(formErrors);
-    if (Object.values(formErrors) !== 0) {
-      ErrorNotification(Object.values(formErrors)[0]);
-    }
-    console.log(Object.values(formErrors));
+    // console.log(formErrors);
+    // if (Object.values(formErrors) !== 0) {
+    //   ErrorNotification(Object.values(formErrors)[0]);
+    // }
+    // console.log(Object.values(formErrors));
   };
 
-  const renderInputs = Inputs.map((data, index) => {
-    return (
-      <div key={data.name} className="form-input flex flex-col">
-        <label
-          style={{ color: " #565656" }}
-          className="md:text-base text-xl"
-          htmlFor={data.label}
-        >
-          {data.label}
-        </label>
-        <input
-          name={data.name}
-          onChange={handleValues}
-          type={data.type}
-          placeholder={data.label}
-          required
-          style={{ border: "1px solid #838383" }}
-          className=" p-2 my-2  text-dark2 w-full font-light rounded-sm "
-        />
-      </div>
-    );
-  });
   return (
     <>
-      <SweetAlert2 {...swalProps} />
+      <FormComplete open={open} setOpen={setOpen} />
       <ToastContainer transition={Zoom} autoClose={800} />
       <motion.div
         initial={{ opacity: 0, scale: 0.7 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
         style={{ background: `url(${largebg})` }}
-        className="Login py-1 md:py-36"
+        className="Login py-1 md:py-24"
       >
         <div className="md:flex scale-75 md:scale-100 flex-col items-center  justify-center">
           <div className="bg-white shadow-lg rounded-xl p-8 ">
@@ -80,8 +63,40 @@ const Register = () => {
               Sign Up
             </h1>
             <form>
-              <div className="my-2  block md:grid gap-7 grid-cols-2">
-                {renderInputs}
+              <div className="my-2  block ">
+                <InputComponent
+                  name="firstName"
+                  values={values}
+                  label="First Name"
+                  setValues={setValues}
+                  type="text"
+                  placeholder="First Name"
+                />
+                <InputComponent
+                  name="lastName"
+                  values={values}
+                  label="Last Name"
+                  setValues={setValues}
+                  type="text"
+                  placeholder="Last Name"
+                />
+
+                <InputComponent
+                  name="password"
+                  values={values}
+                  label="Password"
+                  setValues={setValues}
+                  type="password"
+                  placeholder="Password"
+                />
+                <InputComponent
+                  name="confirmPassword"
+                  values={values}
+                  label="Confirm Password"
+                  setValues={setValues}
+                  type="password"
+                  placeholder="Confirm Password"
+                />
               </div>
 
               <div className="flex justify-center">

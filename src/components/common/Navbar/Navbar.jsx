@@ -56,7 +56,7 @@ const Navbar = ({ path }) => {
       >
         <span onClick={() => navigate("/")}>
           {" "}
-          <img className="w-12" src={siteLogo} />{" "}
+          <img className="w-12" alt="logo" src={siteLogo} />{" "}
         </span>
         <div className="">
           {isOpen ? (
@@ -109,7 +109,7 @@ const Navbar = ({ path }) => {
         </ul>
       </motion.nav>
 
-      <header className=" block md:flex  items-center justify-around py-0 md:py-6">
+      <header className=" block md:flex  items-center justify-around py-0 md:py-3">
         <div className="hidden md:block logo mx-2">
           <Logo />
         </div>

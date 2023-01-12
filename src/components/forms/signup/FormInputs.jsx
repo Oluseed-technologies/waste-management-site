@@ -11,12 +11,6 @@ export const Inputs = [
   },
 
   {
-    name: "email",
-    label: "Email",
-    type: "email",
-  },
-
-  {
     name: "password",
     label: "Password",
     type: "password",
@@ -26,9 +20,24 @@ export const Inputs = [
     label: "Confirm Password",
     type: "password",
   },
-  {
-    name: "phone",
-    label: "Phone Number",
-    type: "number",
-  },
 ];
+
+export const LoginInput = {
+  email: "",
+  password: "",
+};
+
+export const CompleteForm = {
+  email: "",
+  phone: "",
+  country: "",
+  state: "",
+  address: "",
+};
+
+export const RegisterInput = {
+  firstName: "",
+  lastName: "",
+  password: "",
+  confirmPassword: "",
+};
