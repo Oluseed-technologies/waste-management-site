@@ -50,15 +50,17 @@ const Register = () => {
     <>
       <FormComplete open={open} setOpen={setOpen} />
       <ToastContainer transition={Zoom} autoClose={800} />
-      <motion.div
-        initial={{ opacity: 0, scale: 0.7 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-        style={{ background: `url(${largebg})` }}
+
+      <div
+        // initial={{ opacity: 0, scale: 0.7 }}
+        // animate={{ opacity: 1, scale: 1 }}
+        // transition={{ duration: 0.5 }}
+        style={{ background: `url(${largebg})`, zIndex: "-50" }}
         className="Login py-1 md:py-24"
       >
-        <div className="md:flex scale-75 md:scale-100 flex-col items-center  justify-center">
-          <div className="bg-white shadow-lg rounded-xl p-8 ">
+        {/* md:flex   scale-75 md:scale-100 flex-col items-center  justify-center */}
+        <div className={!open ? " md:scale-100  -z-50 scale-75" : ""}>
+          <div className="bg-white  md:w-1/3 md:mx-auto  w-full  shadow-lg rounded-xl p-8 ">
             <h1 className="text-2xl text-primary  text-center font-semibold">
               Sign Up
             </h1>
@@ -116,7 +118,7 @@ const Register = () => {
             </p>
           </div>
         </div>
-      </motion.div>
+      </div>
     </>
   );
 };

@@ -15,7 +15,7 @@ export const InputComponent = ({
       <input
         placeholder={placeholder}
         name={name}
-        className="text-dark12 w-full input-border my-2 md:p-3 p-1"
+        className="text-dark12 w-full input-border my-2 md:p-3 p-2"
         type={type}
         value={values[name]}
         onChange={HandleChange}

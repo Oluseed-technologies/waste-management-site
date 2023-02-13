@@ -71,33 +71,38 @@ function App() {
       {loading ? (
         <Loader />
       ) : (
-        <div className="App">
+        <div className="App ">
           {path === arr || path2 === "manage-waste" ? (
             <Navbar path={path} />
           ) : (
             <Sidebar path={path} />
           )}
-
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<SignUp />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/testimonials" element={<Testimonials />} />
-            <Route path="/manage-waste" element={<Manage />} />
-            <Route path="/manage-waste/:id" element={<Company />} />
-            <Route
-              path="/manage-waste/subscription/:plan"
-              element={<Subscription />}
-            />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/vendor/transaction" element={<Transaction />} />
-            <Route path="/vendor/account" element={<Account />} />
-            <Route path="/vendor/profile" element={<VendorProfile />} />
-            <Route path="/vendor/dashboard" element={<Dashboard />} />
-            <Route path="/vendor/wallet" element={<Wallet />} />
-          </Routes>
+          <div
+            className={` ${
+              path === arr || path2 === "manage-waste" ? "md:mt-24 mt-8" : ""
+            }  `}
+          >
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<SignUp />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/testimonials" element={<Testimonials />} />
+              <Route path="/manage-waste" element={<Manage />} />
+              <Route path="/manage-waste/:id" element={<Company />} />
+              <Route
+                path="/manage-waste/subscription/:plan"
+                element={<Subscription />}
+              />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/vendor/transaction" element={<Transaction />} />
+              <Route path="/vendor/account" element={<Account />} />
+              <Route path="/vendor/profile" element={<VendorProfile />} />
+              <Route path="/vendor/dashboard" element={<Dashboard />} />
+              <Route path="/vendor/wallet" element={<Wallet />} />
+            </Routes>
+          </div>
           {path === arr ? <Footer /> : ""}
         </div>
       )}

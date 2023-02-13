@@ -37,7 +37,7 @@ const Login = () => {
         className="Login md:py-36 py-24 relative "
       >
         <div className="flex md:scale-100 scale-75 z-10  flex-col items-center  jusify-center">
-          <div className="bg-white shadow-lg w-72 rounded-xl p-8 ">
+          <div className="bg-white shadow-lg md:w-1/4 w-full rounded-xl p-8 ">
             <h1 className="text-2xl text-primary  text-center font-semibold">
               Sign In
             </h1>

@@ -52,7 +52,7 @@ const Navbar = ({ path }) => {
     <>
       <nav
         style={{ background: "#C3D9C2" }}
-        className="flex px-2 md:hidden py-2   justify-between items-center"
+        className="flex px-2 md:hidden py-2 fixed top-0 left-0 right-0 z-50   justify-between items-center"
       >
         <span onClick={() => navigate("/")}>
           {" "}
@@ -77,7 +77,7 @@ const Navbar = ({ path }) => {
         variants={variants}
         className="hidden bg-light"
       >
-        <ul className="   md:flex  items-center font-medium justify-between">
+        <ul className="   md:flex pt-14 items-center font-medium justify-between">
           {renderRoutes}
         </ul>
       </motion.nav>
@@ -109,7 +109,10 @@ const Navbar = ({ path }) => {
         </ul>
       </motion.nav>
 
-      <header className=" block md:flex  items-center justify-around py-0 md:py-3">
+      <header
+        style={{ backgroundColor: "rgba(255,255,255,0.8)" }}
+        className=" hidden md:flex fixed  top-0 border-2 border-b-white z-50 left-0 right-0  items-center justify-around py-0 md:py-2"
+      >
         <div className="hidden md:block logo mx-2">
           <Logo />
         </div>
