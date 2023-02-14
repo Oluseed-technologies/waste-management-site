@@ -190,5 +190,5 @@ body::-webkit-scrollbar-track {
 }
 body::-webkit-scrollbar-thumb {
   background-color: #3caa35;
-  border-radius: 5px;
+  border-radius: 30px;
 }
