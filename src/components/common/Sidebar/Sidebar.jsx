@@ -85,7 +85,7 @@ const Sidebar = ({ path }) => {
         </div>
       </motion.nav>
       <aside
-        className={` hidden bg-primary overflow-y-scroll  md:block fixed top-0 py-10 pb-52 left-0  shadow-2xl `}
+        className={` hidden bg-primary overflow-y-scroll sidebar-scrollbar md:block fixed top-0 py-10 pb-52 left-0  shadow-2xl `}
       >
         <div className="w-24 mx-auto">
           <img src={logo} alt="logo" />
